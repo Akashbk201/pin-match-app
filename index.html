@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
+    <title>Pin Match</title>
+</head>
+
+<body class="bg-indigo-950">
+    <section class="bg-indigo-950 py-6">
+        <div class="container m-auto px-5">
+            <div class="w-5/6 m-auto text-center py-6 bg-gray-900 rounded-md" id="annouce-box">
+                <p class="text-center text-sm md:text-lg font-normal text-yellow-50" id="announce-text">Step 1: Generate
+                    Pin | Step 2: Submit the correct Pin.</p>
+            </div>
+            <div class="w-5/6 m-auto flex flex-col md:flex-row gap-6 py-6">
+                <div class="basis-full md:basis-1/2">
+                    <div class="bg-gray-900 rounded-md py-4 px-4">
+                        <input id="pin-box" type="text" class="w-full h-12 px-2 text-base text-gray-500 
+                        font-normal rounded-md" placeholder="Generate 4 Digit Pin" value="">
+
+                        <div class="flex h-auto md:h-[480px] justify-center items-center py-4 md:py-0">
+                            <button id="gen-btn"
+                                class="inline-block text-xl font-noraml text-gray-50 bg-indigo-400 w-[160px] h-[160px] text-center rounded-[50%] border-4 border-indigo-700">Generate</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="basis-full md:basis-1/2">
+                    <div class="bg-gray-900 rounded-md py-4 px-4">
+                        <input type="text" class="w-full h-12 px-2 text-base text-gray-500 
+                        font-normal rounded-md" placeholder="Enter Your 4 Digit Verification Pin" id="keypad-box">
+
+                        <div class="flex flex-col gap-4 justify-center items-center py-10">
+                            <div class="flex">
+                                <button
+                                    class="inline-block py-3 px-3 text-center bg-indigo-950 text-2xl text-yellow-50 w-14 rounded-lg mx-2"
+                                    onclick="keypad(this.innerText)">7</button>
+                                <button
+                                    class="inline-block py-3 px-3 text-center bg-indigo-950 text-2xl text-yellow-50 w-14 rounded-lg mx-2"
+                                    onclick="keypad(this.innerText)">8</button>
+                                <button
+                                    class="inline-block py-3 px-3 text-center bg-indigo-950 text-2xl text-yellow-50 w-14 rounded-lg mx-2"
+                                    onclick="keypad(this.innerText)">9</button>
+                            </div>
+                            <div class="flex">
+                                <button
+                                    class="inline-block py-3 px-3 text-center bg-indigo-950 text-2xl text-yellow-50 w-14 rounded-lg mx-2"
+                                    onclick="keypad(this.innerText)">4</button>
+                                <button
+                                    class="inline-block py-3 px-3 text-center bg-indigo-950 text-2xl text-yellow-50 w-14 rounded-lg mx-2"
+                                    onclick="keypad(this.innerText)">5</button>
+                                <button
+                                    class="inline-block py-3 px-3 text-center bg-indigo-950 text-2xl text-yellow-50 w-14 rounded-lg mx-2"
+                                    onclick="keypad(this.innerText)">6</button>
+                            </div>
+                            <div class="flex">
+                                <button
+                                    class="inline-block py-3 px-3 text-center bg-indigo-950 text-2xl text-yellow-50 w-14 rounded-lg mx-2"
+                                    onclick="keypad(this.innerText)">1</button>
+                                <button
+                                    class="inline-block py-3 px-3 text-center bg-indigo-950 text-2xl text-yellow-50 w-14 rounded-lg mx-2"
+                                    onclick="keypad(this.innerText)">2</button>
+                                <button
+                                    class="inline-block py-3 px-3 text-center bg-indigo-950 text-2xl text-yellow-50 w-14 rounded-lg mx-2"
+                                    onclick="keypad(this.innerText)">3</button>
+                            </div>
+                            <div class="flex">
+                                <button
+                                    class="inline-block py-3 px-3 text-center bg-indigo-950 text-2xl text-yellow-50 w-14 rounded-lg mx-2"
+                                    id="single-remove">
+                                    &#x226A;</button> <button
+                                    class="inline-block py-3 px-3 text-center bg-indigo-950 text-2xl text-yellow-50 w-14 rounded-lg mx-2"
+                                    onclick="keypad(this.innerText)">
+                                    0
+                                </button>
+                                <button
+                                    class="inline-block py-3 px-3 text-center bg-indigo-950 text-2xl text-yellow-50 w-14 rounded-lg mx-2"
+                                    onclick="keypad(this.innerText)">C</button>
+                            </div>
+                            <div class="flex flex-col gap-4 w-2/4 m-auto">
+                                <button class="w-full h-12 text-center block bg-indigo-600 text-yellow-50 rounded-md"
+                                    id="m-submit-btn">Submit</button>
+                                <button
+                                    class="w-full h-12 text-center block bg-transparent text-red-400 rounded-md font-semibold cursor-text"><span
+                                        id="try-left">3</span>
+                                    Try Left!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="custom.js"></script>
+</body>
+
+</html>
